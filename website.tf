@@ -67,13 +67,6 @@ resource "aws_s3_bucket_logging" "website" {
   target_prefix = "website/"
 }
 
-resource "aws_s3_bucket_acl" "website" {
-  provider = aws.main
-
-  bucket = aws_s3_bucket.website.id
-  acl    = var.website_bucket_acl
-}
-
 resource "aws_s3_bucket_policy" "website" {
   provider = aws.main
 
